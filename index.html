@@ -21,7 +21,7 @@
                 <div class="col-10 box-images">
                     <img :src="images[imagesIndex]" alt="images">
                     <div class="points">
-                        <i class="fas fa-circle"></i>
+                        <i :class="count(index)" v-for="(points, index) in images" class="fas fa-circle" @click="changeImg(index)"></i>
                     </div>
                 </div>
                 <div class="col-1 arrow" @click="avanti">

@@ -1,4 +1,3 @@
-Vue.config.devtools = true;
 
 const app = new Vue (
     {
@@ -36,6 +35,16 @@ const app = new Vue (
                     this.imagesIndex = this.images.length - 1;
                 } else {
                     this.imagesIndex--;
+                }
+            },
+            changeImg: function (index) {
+                this.imagesIndex = index;
+            },
+            count: function (index) {
+                if (index === this.imagesIndex) {
+                    return "count-color";
+                } else {
+                    return "";
                 }
             }
         }
