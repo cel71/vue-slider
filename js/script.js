@@ -16,10 +16,24 @@ const app = new Vue (
                 "./img/Ubud, Indonesia.jpg",
             ],
             imagesIndex: 0,
+            nameImages: [
+                "Bangkok, Thailandia",
+                "Barcellona, Spagna",
+                "Città del Capo, Sud Africa",
+                "Il Cairo, Egitto",
+                "Londra, Regno Unito",
+                "New York City, USA",
+                "Parigi, Francia",
+                "Rio de Janeiro, Brasile",
+                "Sydney, Australia",
+                "Ubud, Indonesia",
+            ],
+            nameImagesIndex: 0,
         },
         created () {
             setInterval (() => {
                 this.avanti ();
+                this.avantiName ();
             }, 4000)
         },
         methods: {
@@ -39,6 +53,13 @@ const app = new Vue (
             },
             changeImg: function (index) {
                 this.imagesIndex = index;
+            },
+            avantiName: function () {
+                if (this.nameImagesIndex === (this.nameImages.length - 1)) {
+                    this.nameImagesIndex = 0;
+                } else {
+                    this.nameImagesIndex++;
+                }
             },
             count: function (index) {
                 if (index === this.imagesIndex) {
