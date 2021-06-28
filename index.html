@@ -15,18 +15,18 @@
     <div id="app">
         <div class="container first-box">
             <div class="row">
-                <div class="col-1 arrow" @click="indietro">
-                    <i class="far fa-arrow-alt-circle-left"></i>
+                <div class="col-1 arrow">
+                    <i class="far fa-arrow-alt-circle-left" @click="indietro"></i>
                 </div>
                 <div class="col-10 box-images">
-                    <h1 :class="avantiName">{{ nameImages[nameImagesIndex] }}</h1>
+                    <h1>{{ nameImages[nameImagesIndex] }}</h1>
                     <img :src="images[imagesIndex]" alt="images">
                     <div class="points">
                         <i :class="count(index)" v-for="(points, index) in images" class="fas fa-circle" @click="changeImg(index)"></i>
                     </div>
                 </div>
-                <div class="col-1 arrow" @click="avanti">
-                    <i class="far fa-arrow-alt-circle-right"></i>
+                <div class="col-1 arrow">
+                    <i class="far fa-arrow-alt-circle-right" @click="avanti"></i>
                 </div>
             </div>
         </div>

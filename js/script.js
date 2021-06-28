@@ -33,36 +33,33 @@ const app = new Vue (
         created () {
             setInterval (() => {
                 this.avanti ();
-                this.avantiName ();
             }, 4000)
         },
         methods: {
             avanti: function () {
-                if (this.imagesIndex === (this.images.length - 1)) {
+                if (this.imagesIndex === (this.images.length - 1) && this.nameImagesIndex === (this.nameImages.length - 1)) {
                     this.imagesIndex = 0;
+                    this.nameImagesIndex = 0;
                 } else {
                     this.imagesIndex++;
+                    this.nameImagesIndex++;
                 }
             },
             indietro: function () {
-                if (this.imagesIndex === 0) {
+                if (this.imagesIndex === 0 && this.nameImagesIndex === 0) {
                     this.imagesIndex = this.images.length - 1;
+                    this.nameImagesIndex = this.nameImages.length - 1;
                 } else {
                     this.imagesIndex--;
+                    this.nameImagesIndex--;
                 }
             },
             changeImg: function (index) {
                 this.imagesIndex = index;
-            },
-            avantiName: function () {
-                if (this.nameImagesIndex === (this.nameImages.length - 1)) {
-                    this.nameImagesIndex = 0;
-                } else {
-                    this.nameImagesIndex++;
-                }
+                this.nameImagesIndex = index;
             },
             count: function (index) {
-                if (index === this.imagesIndex) {
+                if (index === this.imagesIndex && index === this.nameImagesIndex) {
                     return "count-color";
                 } else {
                     return "";
